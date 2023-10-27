@@ -1,16 +1,16 @@
 import PySimpleGUI as sg
 
-#layouts de los inputs para cada figura
+# layouts de los inputs para cada figura
 layout_cuadrado = [
     [sg.Text('Lado:')],
     [sg.InputText(key='-LADO-')],
 ]
 
 layout_rectangulo = [
-    [sg.Text('Base:')],
-    [sg.InputText(key=('-BASE-'))],
-    [sg.Text('Altura:')],
-    [sg.InputText(key=('-ALTURA-'))],
+    [sg.Text('Lado 1:')],
+    [sg.InputText(key=('-LADO1-'))],
+    [sg.Text('Lado 2:')],
+    [sg.InputText(key=('-LADO2-'))],
 ]
 
 layout_circulo = [
@@ -25,7 +25,7 @@ layout_triangulo = [
     [sg.InputText(key=('-ALTURA-'))],
 ]
 
-#diseño de la ventana
+# diseño de la ventana
 layout = [
     [sg.Text('', size=(100, 4), justification='center',
              key='-RESULTADO-', relief='ridge')],
@@ -51,11 +51,11 @@ layout = [
                    [sg.Text('')],
                    [sg.Text('')],
                    [sg.Text('')],
-                   [sg.Button('Calcular', size=(10, 2))]], key='-BOTON-CALCULAR-', visible=False)  
+                   [sg.Button('Calcular', size=(10, 2))]], key='-BOTON-CALCULAR-', visible=False)
     ],
 
     [sg.Stretch()],
-    
+
 ]
 
 
@@ -63,7 +63,7 @@ def calcular():
     print("Hola men")
 
 
-#Creacion de la ventana
+# Creacion de la ventana
 window = sg.Window('Calculadora', layout, size=(600, 300))
 
 
@@ -76,9 +76,9 @@ def obtener_valores_figura(figura_actual):
         lado = window['-LADO-'].get()
         return f'Lado: {lado}'
     elif figura_actual == 'Rectangulo':
-        base = window['-BASE-'].get()
-        altura = window['-ALTURA-'].get()
-        return f'Base: {base}\nAltura: {altura}'
+        lado1 = window['-LADO1-'].get()
+        lado2 = window['-LADO2-'].get()
+        return f'lado 1: {lado1}\n lado 2: {altura}'
     elif figura_actual == 'Circulo':
         radio = window['-RADIO-'].get()
         return f'Radio: {radio}'
