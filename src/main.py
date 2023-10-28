@@ -82,30 +82,34 @@ figura_actual = None
 def obtener_valores_figura(figura_actual):
 
     if figura_actual == 'Cuadrado':
-        lado = window['-LADO-'].get()
+        lado = float(window['-LADO-'].get())
         area = calculators.area_cuadrado(lado)
         perimetro = calculators.perimetro_cuadrado(lado)
         return f'Área: {area}\nPerímetro: {perimetro}'
+    
     elif figura_actual == 'Rectangulo':
-        lado1 = window['-LADO1-'].get()
-        lado2 = window['-LADO2-'].get()
+        lado1 = float(window['-LADO1-'].get())
+        lado2 = float(window['-LADO2-'].get())
         area = calculators.area_rectangulo(lado1, lado2)
         perimetro = calculators.perimetro_rectangulo(lado1, lado2)
         return f'Área: {area}\nPerímetro: {perimetro}'
+    
     elif figura_actual == 'Circulo':
-        radio = window['-RADIO-'].get()
+        radio = float(window['-RADIO-'].get())
         area = calculators.area_circulo(radio)
         perimetro = calculators.perimetro_circulo(radio)
         return f'Área: {area}\nPerímetro: {perimetro}'
+    
     elif figura_actual == 'Triangulo':
-        base = window['-BASE-'].get()
-        altura = window['-ALTURA-'].get()
-        lado1 = window['-LADO1-TRIANGULO-'].get()
-        lado2 = window['-LADO2-TRIANGULO-'].get()
-        lado3 = window['-LADO3-TRIANGULO-'].get()
+        base = float(window['-BASE-'].get())
+        altura = float(window['-ALTURA-'].get())
+        lado1 = float(window['-LADO1-TRIANGULO-'].get())
+        lado2 = float(window['-LADO2-TRIANGULO-'].get())
+        lado3 = float(window['-LADO3-TRIANGULO-'].get())
         area = calculators.area_triangulo(base, altura)
-        perimetro = calculators.perimetro_triangulo()
+        perimetro = calculators.perimetro_triangulo(lado1, lado2, lado3)
         return f'Área: {area}\nPerímetro: {perimetro}'
+    
     else:
         return 'Error'
 
