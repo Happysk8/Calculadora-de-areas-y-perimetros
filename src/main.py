@@ -25,6 +25,13 @@ layout_triangulo = [
     [sg.InputText(key=('-BASE-'))],
     [sg.Text('Altura:')],
     [sg.InputText(key=('-ALTURA-'))],
+    [sg.Text('Lado 1')],
+    [sg.InputText(key=('-LADO1-TRIANGULO-'))],
+    [sg.Text('Lado 2')],
+    [sg.InputText(key=('-LADO2-TRIANGULO-'))],
+    [sg.Text('Lado 3')],
+    [sg.InputText(key=('-LADO3-TRIANGULO-'))],
+
 ]
 
 # diseño de la ventana
@@ -66,7 +73,7 @@ def calcular():
 
 
 # Creacion de la ventana
-window = sg.Window('Calculadora', layout, size=(600, 300))
+window = sg.Window('Calculadora', layout, size=(600, 350))
 
 
 figura_actual = None
@@ -93,6 +100,9 @@ def obtener_valores_figura(figura_actual):
     elif figura_actual == 'Triangulo':
         base = window['-BASE-'].get()
         altura = window['-ALTURA-'].get()
+        lado1 = window['-LADO1-TRIANGULO-'].get()
+        lado2 = window['-LADO2-TRIANGULO-'].get()
+        lado3 = window['-LADO3-TRIANGULO-'].get()
         area = calculators.area_triangulo(base, altura)
         perimetro = calculators.perimetro_triangulo()
         return f'Área: {area}\nPerímetro: {perimetro}'
