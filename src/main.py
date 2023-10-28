@@ -1,4 +1,9 @@
+import os
 import PySimpleGUI as sg
+import calculators
+
+#Cambiar la siguiente ruta de acuerdo a la máquina en la que se esté corriendo la app
+os.chdir("C:/Users/LENOVO/.vscode/apps/Calculadora-de-areas-y-perimetros")
 
 # layouts de los inputs para cada figura
 layout_cuadrado = [
@@ -74,17 +79,25 @@ def obtener_valores_figura(figura_actual):
 
     if figura_actual == 'Cuadrado':
         lado = window['-LADO-'].get()
-        return f'Lado: {lado}'
+        area = calculators.area_cuadrado(lado)
+        perimetro = 0
+        return f'area: {lado}\nperimetro: {perimetro}'
     elif figura_actual == 'Rectangulo':
         lado1 = window['-LADO1-'].get()
         lado2 = window['-LADO2-'].get()
+        area = calculators.area_rectangulo(lado1, lado2)
+        perimetro = 0
         return f'lado 1: {lado1}\n lado 2: {altura}'
     elif figura_actual == 'Circulo':
         radio = window['-RADIO-'].get()
+        area = calculators.area_circulo(radio)
+        perimetro = 0
         return f'Radio: {radio}'
     elif figura_actual == 'Triangulo':
         base = window['-BASE-'].get()
         altura = window['-ALTURA-'].get()
+        area = calculators.area_triangulo(base, altura)
+        perimetro = 0
         return f'Base: {base}\nAltura: {altura}'
     else:
         return ''
