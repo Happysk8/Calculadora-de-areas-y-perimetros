@@ -1,9 +1,5 @@
 import os
 import PySimpleGUI as sg
-import calculators
-
-#Cambiar la siguiente ruta de acuerdo a la máquina en la que se esté corriendo la app
-os.chdir("C:/Users/LENOVO/.vscode/apps/Calculadora-de-areas-y-perimetros")
 
 # layouts de los inputs para cada figura
 layout_cuadrado = [
