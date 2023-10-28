@@ -77,27 +77,27 @@ def obtener_valores_figura(figura_actual):
     if figura_actual == 'Cuadrado':
         lado = window['-LADO-'].get()
         area = calculators.area_cuadrado(lado)
-        perimetro = 0
-        return f'area: {lado}\nperimetro: {perimetro}'
+        perimetro = calculators.perimetro_cuadrado(lado)
+        return f'Área: {area}\nPerímetro: {perimetro}'
     elif figura_actual == 'Rectangulo':
         lado1 = window['-LADO1-'].get()
         lado2 = window['-LADO2-'].get()
         area = calculators.area_rectangulo(lado1, lado2)
-        perimetro = 0
-        return f'lado 1: {lado1}\n lado 2: {altura}'
+        perimetro = calculators.perimetro_rectangulo(lado1, lado2)
+        return f'Área: {area}\nPerímetro: {perimetro}'
     elif figura_actual == 'Circulo':
         radio = window['-RADIO-'].get()
         area = calculators.area_circulo(radio)
-        perimetro = 0
-        return f'Radio: {radio}'
+        perimetro = calculators.perimetro_circulo(radio)
+        return f'Área: {area}\nPerímetro: {perimetro}'
     elif figura_actual == 'Triangulo':
         base = window['-BASE-'].get()
         altura = window['-ALTURA-'].get()
         area = calculators.area_triangulo(base, altura)
-        perimetro = 0
-        return f'Base: {base}\nAltura: {altura}'
+        perimetro = calculators.perimetro_triangulo()
+        return f'Área: {area}\nPerímetro: {perimetro}'
     else:
-        return ''
+        return 'Error'
 
 
 def calcular():
