@@ -1,5 +1,6 @@
 import os
 import PySimpleGUI as sg
+import calculators
 
 # layouts de los inputs para cada figura
 layout_cuadrado = [
