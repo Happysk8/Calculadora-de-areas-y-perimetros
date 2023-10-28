@@ -1,5 +1,4 @@
 import PySimpleGUI as sg
-
 # layouts de los inputs para cada figura
 layout_cuadrado = [
     [sg.Text('Lado:')],
